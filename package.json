@@ -1,0 +1,36 @@
+{
+  "name": "myspotifystats",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt-ts",
+    "build": "nuxt-ts build",
+    "start": "nuxt-ts start",
+    "generate": "nuxt-ts generate",
+    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint": "npm run lint:js"
+  },
+  "dependencies": {
+    "@nuxt/typescript-runtime": "^1.0.0",
+    "@nuxtjs/axios": "^5.12.0",
+    "axios": "^0.20.0",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "nuxt": "^2.14.0",
+    "nuxt-property-decorator": "^2.7.2",
+    "querystring": "^0.2.0",
+    "vue-cookies": "^1.7.3"
+  },
+  "devDependencies": {
+    "@nuxt/types": "^2.14.0",
+    "@nuxt/typescript-build": "^2.0.2",
+    "@nuxtjs/eslint-config": "^3.1.0",
+    "@nuxtjs/eslint-config-typescript": "^3.0.0",
+    "@nuxtjs/eslint-module": "^2.0.0",
+    "@nuxtjs/vuetify": "^1.11.2",
+    "@types/request": "^2.48.5",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.5.0",
+    "eslint-plugin-nuxt": "^1.0.0"
+  }
+}
