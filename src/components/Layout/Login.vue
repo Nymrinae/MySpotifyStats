@@ -76,43 +76,38 @@ export default class Login extends Vue {}
 
 <style scoped>
 path.st0 {
+  stroke: #5c5c5cbe;
   fill:  #1ED760;
   stroke-dasharray: 1800;
   opacity: 1;
-  animation: animate 1.2s linear forwards;
+  animation: animate 2s ease-in-out
 }
 
 @keyframes animate {
   0% {
     opacity: 0;
     fill: none;
-    stroke: #fff;
-
     stroke-dashoffset: 1800;
   }
 
   30% {
     opacity: 10;
     fill: none;
-    stroke: #fff;
-    stroke-dashoffset: 1600;
+    stroke-dashoffset: 1800;
   }
 
   60% {
     opacity: 10;
     fill: none;
-    stroke: #fff;
-    stroke-dashoffset: 1400;
+    stroke-dashoffset: 1500;
   }
 
   90% {
-    stroke: #000;
-    stroke-dashoffset: 1200;
+    fill: rgba(255, 255, 255, 0);
   }
 
   100% {
     opacity: 10;
-    stroke: #000;
     stroke-dashoffset: 0;
   }
 }

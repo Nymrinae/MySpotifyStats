@@ -1,4 +1,4 @@
-# nuxtspotify
+# MySpotifyStats
 
 ## Build Setup
 

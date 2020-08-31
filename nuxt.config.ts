@@ -1,6 +1,6 @@
-import colors from 'vuetify/es5/util/colors'
+import { NuxtConfig } from "@nuxt/types"
 
-export default {
+const config: NuxtConfig = {
   /*
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
@@ -17,8 +17,7 @@ export default {
   */
   srcDir: 'src/',
   head: {
-    titleTemplate: '%s - ' + process.env.npm_package_name,
-    title: process.env.npm_package_name || '',
+    title: 'MySpotifyStats',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -44,9 +43,9 @@ export default {
   ** Server Middleware
   ** https://nuxtjs.org/api/configuration-servermiddleware/
   */
-  serverMiddleware: {
-    '/': '~/api/auth'
-  },
+  serverMiddleware: [
+    { path: '/', handler: '~/api/auth' }
+  ],
   /*
   ** Auto import components
   ** See https://nuxtjs.org/api/configuration-components
@@ -100,3 +99,5 @@ export default {
   build: {
   }
 }
+
+export default config

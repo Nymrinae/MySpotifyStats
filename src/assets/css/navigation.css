@@ -1,0 +1,37 @@
+.navTitle {
+  color: white;
+  font-size: 10px;
+  padding-top: 4px;
+}
+
+.icon {
+  color: #696969;
+}
+
+.mainIcon {
+  fill: #1ED760;
+  height: 48px;
+}
+
+.mainIcon:hover {
+  filter: brightness(1.25)
+}
+
+.listItem {
+  padding: 10px 0;
+  border-left: 5px solid black;
+}
+
+.listItem:hover {
+  background-color: rgb(71, 71, 71);
+  cursor: pointer;
+  border-left: 5px solid #1ED760;
+}
+
+.listItem:active {
+  border-left: 5px solid #1ED760;
+}
+
+.listItem:hover .icon {
+  color: #1ED760;
+}
