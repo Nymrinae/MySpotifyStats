@@ -1,0 +1,22 @@
+/* Profile */
+.username {
+  letter-spacing: .5px !important;
+}
+
+.username:hover {
+  color: #1ED760 !important;
+  transition: .2s linear;
+  cursor: pointer;
+}
+
+.statsText {
+  text-transform: uppercase;
+  color: #696969;
+  font-size: 14px;
+  font-weight: bold;
+  filter: brightness(1.2)
+}
+
+.statsNumber {
+  font-weight: bold;
+}

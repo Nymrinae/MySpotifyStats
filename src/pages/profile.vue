@@ -1,8 +1,7 @@
 <template>
-  <v-container style="padding: 72px;">
-    nique ta mere reyken
-    <!-- <UserHandler />
-    <v-row class="mt-8">
+  <v-container style="padding-top: 72px;">
+    <UserHandler />
+    <!-- <v-row class="mt-8">
       <v-col cols="1" />
       <ArtistsHandler displayType="inline" />
       <TracksHandler />

@@ -22,16 +22,31 @@
   border-left: 5px solid black;
 }
 
-.listItem:hover {
+.listItem:hover, .navbarItemActive {
   background-color: rgb(71, 71, 71);
   cursor: pointer;
-  border-left: 5px solid #1ED760;
+  border-left: 5px solid #1DB954;
 }
 
-.listItem:active {
-  border-left: 5px solid #1ED760;
+.mobileListItem {
+  padding-bottom: 4px;
+  border-top: 5px solid black;
 }
 
-.listItem:hover .icon {
+.mobileListItem:hover, .navbarMobileItemActive {
+  background-color: rgb(71, 71, 71);
+  cursor: pointer;
+  border-top: 5px solid #1DB954;
+}
+
+.navbarItemActive .icon {
+  color: #1ED760;
+}
+
+.navbarMobileItemActive .icon {
+  color: #1ED760;
+}
+
+.listItem:hover .icon, .mobileListItem:hover .icon {
   color: #1ED760;
 }

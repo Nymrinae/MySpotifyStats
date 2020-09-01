@@ -9,6 +9,12 @@ const getFollowingArtistsNb = async (): Promise<any> => {
   return followingArtistNb.artists.items.length
 }
 
+const getUserPlaylistsNb = async (userId: string): Promise<number> => {
+  const userPlaylists = await getDataFrom(`/users/${userId}/playlists`)
+
+  return userPlaylists.total
+}
+
 const getRecentlyPlayed = async (): Promise<any> => {
   const lastPlayed = await getDataFrom('/me/player/recently-played')
 
@@ -29,7 +35,8 @@ const getRecentlyPlayed = async (): Promise<any> => {
 }
 
 export {
-  getUser,
   getFollowingArtistsNb,
+  getUser,
+  getUserPlaylistsNb,
   getRecentlyPlayed
 }

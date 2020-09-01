@@ -1,25 +1,31 @@
 import { GetterTree, ActionTree, MutationTree } from 'vuex'
 
 const state = () => ({
-    isLogged: false
+  topArtistsState: 'long',
+  topTracksState: 'long',
+  activePlaylist: {}
 })
 
 type RootState = ReturnType<typeof state>
 
 const getters: GetterTree<RootState, RootState> = {
-    isLogged: (state) => state.isLogged
+  topArtistsState: state => state.topArtistsState,
+  topTracksState: state => state.topTracksState,
+  activePlaylist: state => state.activePlaylist
 }
 
 const mutations: MutationTree<RootState> = {
-    setLoggedState: (state) => state.isLogged = !state.isLogged
+  setTopArtistsState: (state, topArtistsState: string) => state.topArtistsState = topArtistsState,
+  setTopTracksState: (state, topTracksState: string) => state.topTracksState = topTracksState,
+  setActivePlaylist: (state, playlist: PlaylistT) => state.activePlaylist = playlist
 }
 
 const actions: ActionTree<RootState, RootState> = {
 }
 
 export {
-    state,
-    getters,
-    mutations,
-    actions
+  state,
+  getters,
+  mutations,
+  actions
 }

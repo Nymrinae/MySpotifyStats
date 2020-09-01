@@ -2,11 +2,12 @@
   <client-only>
     <v-app id="app" no-gutters>
       <v-row no-gutters>
-        <v-col cols="1">
-          <NavHandler />
+        <v-col v-if="!isMobile" cols="1">
+          <Sidebar />
         </v-col>
         <v-col>
           <router-view />
+          <BottomNavbar v-if="isMobile" />
         </v-col>
       </v-row>
     </v-app>
@@ -17,9 +18,28 @@
 import { Component, Vue } from 'nuxt-property-decorator'
 
 @Component
-export default class App extends Vue {}
-</script>
+export default class DefaultLayout extends Vue {
+  private windowSize: number = window.innerWidth
 
+  get isMobile(): boolean {
+    return this.windowSize < 767
+  }
+
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.onWindowSizeChange)
+    })
+  }
+
+  beforeDestroy() {
+    window.removeEventListener('resize', this.onWindowSizeChange)
+  }
+
+  onWindowSizeChange() {
+    this.windowSize = window.innerWidth
+  }
+}
+</script>
 
 <style>
 #app {

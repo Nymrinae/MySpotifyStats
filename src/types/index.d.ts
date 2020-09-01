@@ -1,6 +1,9 @@
 type User = {
   name: string,
   profilePicture: string,
+  followers: number,
+  following: number,
+  nbPlaylists: number
 }
 
 type Track = {

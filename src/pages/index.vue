@@ -7,14 +7,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Mutation ,Vue } from 'nuxt-property-decorator'
+import { Component, Vue } from 'nuxt-property-decorator'
 
 @Component({
   layout: 'login'
 })
 export default class Index extends Vue {
-  @Mutation setLoggedState!: any
-
   mounted() {
     if (Object.keys(this.$route.query).length) {
       const { access_token, refresh_token } = this.$route.query
@@ -22,7 +20,6 @@ export default class Index extends Vue {
       this.$cookies.set('spotifyAccessToken', access_token)
       this.$cookies.set('spotifyRefreshToken', refresh_token)
 
-      this.setLoggedState()
       this.$router.replace({ path: '/profile' })
     }
   }

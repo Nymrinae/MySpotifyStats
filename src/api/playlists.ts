@@ -16,9 +16,9 @@ const getPlaylistTracks = async (playlistId: string): Promise<PlaylistTrack> => 
 }
 
 const getUserPlaylists = async (): Promise<PlaylistT[]> => {
-  const userPlaylists = await getDataFrom('/me/playlists')
+  const userPlaylists = await getDataFrom('/me/playlists?limit=50')
 
-  return Promise.all(userPlaylists.items.map(async (playlist: any): Promise<PlaylistT> => {
+  return userPlaylists.items.map((playlist: any): PlaylistT => {
     return {
       id: playlist.id,
       img: playlist.images[0].url,
@@ -29,7 +29,7 @@ const getUserPlaylists = async (): Promise<PlaylistT[]> => {
         name: playlist.owner.display_name,
       }
     }
-  }) as PlaylistT[])
+  }) as PlaylistT[]
 }
 
 export {
