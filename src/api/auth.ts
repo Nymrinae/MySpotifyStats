@@ -2,7 +2,7 @@ import querystring from 'querystring'
 import Vue from 'vue'
 
 const spotifyAuthStateKey = 'spotify_auth_state'
-const REDIRECT_BASE_URL = process.env.NODE_ENV === 'production' ? 'myspotifystats.netlify.app' : 'http://localhost:3000'
+const REDIRECT_BASE_URL = process.env.NODE_ENV === 'production' ? 'http://myspotifystats.netlify.app' : 'http://localhost:3000'
 
 const generateRandomString = (length: number): string => {
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
