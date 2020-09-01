@@ -6,7 +6,7 @@ import cookieParser from 'cookie-parser'
 
 const app = express()
 const spotifyAuthStateKey = 'spotify_auth_state'
-const REDIRECT_BASE_URL = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:3000'
+const REDIRECT_BASE_URL = process.env.NODE_ENV === 'production' ? 'myspotifystats.netlify.app' : 'http://localhost:3000'
 
 const generateRandomString = (length: number): string => {
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
