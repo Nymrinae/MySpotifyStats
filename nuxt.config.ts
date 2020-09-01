@@ -40,13 +40,6 @@ const config: NuxtConfig = {
     '@/plugins/VueCookies'
   ],
   /*
-  ** Server Middleware
-  ** https://nuxtjs.org/api/configuration-servermiddleware/
-  */
-  serverMiddleware: [
-    { path: '/', handler: '~/api/auth' }
-  ],
-  /*
   ** Auto import components
   ** See https://nuxtjs.org/api/configuration-components
   */
@@ -70,11 +63,8 @@ const config: NuxtConfig = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {},
-  publicRuntimeConfig: {
-  },
-  privateRuntimeConfig: {
+  env: {
     spotifyClientID: process.env.SPOTIFY_CLIENT_ID,
-    spotifyClientSecret: process.env.SPOTIFY_CLIENT_SECRET
   },
   /*
   ** vuetify modules configuration

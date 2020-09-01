@@ -8,19 +8,22 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
+import { getHashParams } from '@/api/auth'
 
 @Component({
   layout: 'login'
 })
 export default class Index extends Vue {
   mounted() {
-    if (Object.keys(this.$route.query).length) {
-      const { access_token, refresh_token } = this.$route.query
+    const params = getHashParams()
 
-      this.$cookies.set('spotifyAccessToken', access_token)
-      this.$cookies.set('spotifyRefreshToken', refresh_token)
+    if (Object.keys(params).length) {
+      const { access_token, state } = params
 
-      this.$router.replace({ path: '/profile' })
+      if (state === this.$cookies.get('spotify_auth_state')) {
+        this.$cookies.set('spotifyAccessToken', access_token)
+        this.$router.replace({ path: '/profile' })
+      }
     }
   }
 }
