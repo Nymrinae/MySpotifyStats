@@ -12,7 +12,7 @@
         </v-avatar>
       </a>
     </v-col>
-    <v-col :cols="track.lastTimePlayed ? 8 : 10">
+    <v-col cols="9" sm="10" class="pl-6">
       <v-row no-gutters>
         <span class="songAlbumName">{{ track.name }}</span>
       </v-row>
@@ -23,8 +23,8 @@
     <v-col cols="2" v-if="track.lastTimePlayed">
       <span style="font-size: 14px; color: white" v-html="track.lastTimePlayed" />
     </v-col>
-    <v-col cols="1" class="centerVertically">
-      <span style="font-size: 14px; color: white" v-html="track.duration" />
+    <v-col cols="2" sm="1">
+      <span  class="pr-6" style="font-size: 14px; color: white" v-html="track.duration" />
     </v-col>
   </v-row>
 </template>

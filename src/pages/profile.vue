@@ -3,8 +3,12 @@
     <UserHandler />
     <v-row class="mt-8">
       <v-col cols="1" />
-      <ArtistsHandler displayType="inline" />
-      <TracksHandler />
+      <v-col cols="12" sm="5">
+        <ArtistsHandler displayType="inline" />
+      </v-col>
+      <v-col cols="12" sm="5">
+        <TracksHandler />
+      </v-col>
       <v-col cols="1" />
     </v-row>
   </v-container>

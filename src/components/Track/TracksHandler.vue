@@ -1,7 +1,7 @@
 <template>
-  <v-col :cols="extended ? 12 : 5">
+  <v-col>
     <HeaderTitle
-      title="Top Tracks"
+      title="Top Tracks of All Time"
       type="track"
       :extended="extended"
     />

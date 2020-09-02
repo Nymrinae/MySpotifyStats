@@ -26,7 +26,7 @@
         </v-row>
       </v-col>
     </v-row>
-    <v-row class="mt-6" align="center" justify="center">
+    <v-row class="mt-8" align="center" justify="center">
       <Button content="Logout" />
     </v-row>
   </v-container>
