@@ -15,7 +15,7 @@
         <v-img :src="track.img" />
       </v-avatar>
     </a>
-    <v-col sm="10" md="9" xl="10" class="pl-2">
+    <v-col cols="8" xs="10" sm="10" md="9" xl="10" class="pl-2">
       <v-row no-gutters>
         <span class="baseProfileText white--text">{{ track.name }}</span>
       </v-row>
@@ -27,7 +27,7 @@
       <span style="baseProfileText white--text" v-html="track.lastTimePlayed" />
     </v-col>
     <v-col cols="1">
-      <span class="baseProfileText mr-n6 white--text" v-html="track.duration" />
+      <span class="baseProfileText ml-2 white--text" v-html="track.duration" />
     </v-col>
   </v-row>
 </template>
@@ -42,23 +42,13 @@ export default class TrackInfo extends Vue {
 
   formatTrackInfo(author: string, album: string) {
     let trackInfoDesc = `${author} - ${album}`
-    const displayPoints = (): number | undefined => {
-      // @ts-ignore
-      if (this.$vuetify.breakpoint.sm)
-        return 1
-      // @ts-ignore
-      if (this.$vuetify.breakpoint.md)
-        return 2
-      // @ts-ignore
-      if (this.$vuetify.breakpoint.lg)
-        return 3
-    }
 
-    if (trackInfoDesc.length > 32 && displayPoints) {
-      const nbPoints: number | undefined = displayPoints()
-      const parseAlbumName: string = album.split(' ').slice(0, nbPoints).join(' ')
+    if (trackInfoDesc.length > 32) {
+      // @ts-ignore
+      const addPoints: number | undefined = this.$vuetify.breakpoint.xs ? 3 : undefined
+      const parseAlbumName: string = album.split(' ').slice(0, addPoints).join(' ')
   
-      trackInfoDesc = `${author} - ${parseAlbumName}${nbPoints ? '...' : ''}`
+      trackInfoDesc = `${author} - ${parseAlbumName}${addPoints ? '...' : ''}`
     }
 
     return trackInfoDesc
