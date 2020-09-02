@@ -11,7 +11,7 @@
       v-for="{ icon, path, title } in navbarItems"
       :key="title"
       :id="path"
-      class="mobileListItem px-6 pt-1"
+      class="mobileListItem px-4 pt-1"
       style="width: 100%"
       @click="goTo(path)"
     >

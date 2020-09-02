@@ -15,19 +15,19 @@
         <v-img :src="track.img" />
       </v-avatar>
     </a>
-    <v-col cols="9" xl="10" class="pl-6">
+    <v-col cols="8" xl="10" class="pl-2">
       <v-row no-gutters>
-        <span class="songAlbumName">{{ track.name }}</span>
+        <span class="baseProfileText white--text">{{ track.name }}</span>
       </v-row>
-      <v-row no-gutters style="word-wrap: break-word">
-        <div class="songAlbumText"> {{ formatTrackInfo(track.author, track.album) }}</div>
+      <v-row no-gutters>
+        <div class="baseProfileText grey--text"> {{ formatTrackInfo(track.author, track.album) }}</div>
       </v-row>
     </v-col>
     <v-col cols="2" v-if="track.lastTimePlayed">
-      <span style="font-size: 14px; color: white" v-html="track.lastTimePlayed" />
+      <span style="baseProfileText white--text" v-html="track.lastTimePlayed" />
     </v-col>
     <v-col cols="1">
-      <span class="pr-6" style="font-size: 14px; color: white" v-html="track.duration" />
+      <span class="baseProfileText mr-n6 white--text" v-html="track.duration" />
     </v-col>
   </v-row>
 </template>
@@ -43,7 +43,10 @@ export default class TrackInfo extends Vue {
   formatTrackInfo(author: string, album: string) {
     let trackInfoDesc = `${author} - ${album}`
     const displayPoints = (): number | undefined => {
-    // @ts-ignore
+      // @ts-ignore
+      if (this.$vuetify.breakpoint.sm)
+        return 1
+      // @ts-ignore
       if (this.$vuetify.breakpoint.md)
         return 2
       // @ts-ignore
@@ -62,17 +65,3 @@ export default class TrackInfo extends Vue {
   }
 }
 </script>
-
-<style scoped>
-.songAlbumName {
-  color: white;
-  font-size: 14px;
-  padding-left: 12px;
-}
-
-.songAlbumText {
-  color: #696969;
-  font-size: 14px;
-  padding-left: 12px;
-}
-</style>

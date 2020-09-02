@@ -21,6 +21,11 @@
   font-weight: bold;
 }
 
+.baseProfileText {
+  font-size: 14px;
+  padding-left: 12px;
+}
+
 .pointer {
   cursor: pointer;
 }
