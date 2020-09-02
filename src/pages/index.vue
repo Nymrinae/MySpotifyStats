@@ -21,6 +21,7 @@ export default class Index extends Vue {
       const { access_token, state } = params
 
       if (state === this.$cookies.get('spotify_auth_state')) {
+        this.$cookies.remove('spotify_auth_state')
         this.$cookies.set('spotifyAccessToken', access_token)
         this.$router.replace({ path: '/profile' })
       }

@@ -27,7 +27,7 @@
       </v-col>
     </v-row>
     <v-row class="mt-8" align="center" justify="center">
-      <Button content="Logout" />
+      <ButtonSpotify content="Log out" action="logout" />
     </v-row>
   </v-container>
 </template>
@@ -67,6 +67,11 @@ export default class UserHandler extends Vue {
       { name: 'Following', nb: following },
       { name: 'Playlists', nb: nbPlaylists }
     ]
+  }
+
+  logout() {
+    this.$cookies.remove('spotifyAccessToken')
+    this.$router.replace({ path: '/' })
   }
 }
 </script>

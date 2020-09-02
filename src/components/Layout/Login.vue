@@ -57,26 +57,18 @@
           c0.83-2.5,1.25-3.96,1.25-4.38c0-0.25-0.44-1.54-1.31-3.88l-21.69-59.25H539l15.31,41.63l13.19-41.63H578.88z"/>
       </g>
     </svg>
-    <v-btn
-      class="spotify-dark-green white--text mt-6 px-4"
-      @click="loginWithSpotify"
-      rounded
-    >
-      Log in with Spotify
-    </v-btn>
+    <ButtonSpotify
+      content="Log in with Spotify"
+      action="login"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'nuxt-property-decorator'
-import { getSpotifyAuthURL } from '@/api/auth'
 
 @Component
-export default class Login extends Vue {
-  loginWithSpotify(): void {
-    window.location.href = getSpotifyAuthURL(this.$config.spotifyClientID)
-  }
-}
+export default class Login extends Vue {}
 </script>
 
 <style scoped>

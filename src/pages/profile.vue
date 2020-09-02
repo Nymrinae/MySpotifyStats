@@ -21,7 +21,8 @@ import { Vue, Component } from 'nuxt-property-decorator'
 @Component({
   head: {
     title: 'MySpotifyStats - Profile'
-  }
+  },
+  middleware: 'auth'
 })
 export default class Profile extends Vue {}
 </script>

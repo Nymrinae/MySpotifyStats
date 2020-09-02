@@ -16,14 +16,14 @@
 </template>
 
 <script lang="ts">
-import { Component, Getter, Prop, Vue } from 'nuxt-property-decorator'
+import { Component, State, Prop, Vue } from 'nuxt-property-decorator'
 import { getUserTopArtists } from '@/api/artists'
 
 @Component
 export default class TopArtistsHandler extends Vue {
   @Prop(Boolean) private readonly extended!: boolean
   @Prop({ default: 'inline' }) private readonly displayType!: DisplayType
-  @Getter private topArtistsState!: TimeRange
+  @State private topArtistsState!: TimeRange
 
   private artistsShort: Artist[] = []
   private artistsMedium: Artist[] = []

@@ -29,7 +29,7 @@ export default class Button extends Vue {
 .btn {
   color: rgb(255, 255, 255);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
   text-align: center;

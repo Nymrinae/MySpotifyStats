@@ -13,13 +13,13 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { Getter, Mutation } from 'vuex-class';
+import { State, Mutation } from 'vuex-class';
 
 @Component
 export default class TimeRangeSwitcher extends Vue {
   @Prop() private readonly type!: TopType
-  @Getter private topArtistsState!: TimeRange
-  @Getter private topTracksState!: TimeRange
+  @State private topArtistsState!: TimeRange
+  @State private topTracksState!: TimeRange
   @Mutation setTopArtistsState: any
   @Mutation setTopTracksState: any
 

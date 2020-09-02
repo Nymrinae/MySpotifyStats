@@ -16,13 +16,13 @@
 </template>
 
 <script lang="ts">
-import { Component, Getter, Prop, Vue } from 'nuxt-property-decorator'
+import { Component, State, Prop, Vue } from 'nuxt-property-decorator'
 import { getUserTopTracks } from '@/api/tracks'
 
 @Component
 export default class TopTracksHandler extends Vue {
   @Prop(Boolean) private readonly extended!: boolean
-  @Getter private topTracksState!: TimeRange
+  @State private topTracksState!: TimeRange
 
   private tracksShort: Track[] = []
   private tracksMedium: Track[] = []

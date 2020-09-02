@@ -48,3 +48,5 @@ type NavbarItem = {
 type TopType = 'artist' | 'track'
 type TimeRange = 'short' | 'medium' | 'long'
 type DisplayType = 'inline' | 'rounded'
+type ButtonActionType = 'login' | 'logout'
+type ButtonDisplayType = 'button' | 'icon'

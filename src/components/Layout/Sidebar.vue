@@ -31,13 +31,7 @@
       </div>
     </v-list>
     <template v-slot:append>
-      <v-icon
-        class="icon pointer"
-        style="margin-bottom: 24px;"
-        size="32"
-      >
-        mdi-logout
-      </v-icon>
+      <ButtonSpotify action="logout" type="icon" />
     </template>
   </v-navigation-drawer>
 </template>

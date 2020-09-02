@@ -4,7 +4,7 @@
       <v-avatar size="48">
         <v-img :src="artist.img" />
       </v-avatar>
-      <span class="artistText"> {{ artist.name }} </span>
+      <span class="mediumProfileText white--text"> {{ artist.name }} </span>
     </v-col>
   </v-row>
   <v-avatar

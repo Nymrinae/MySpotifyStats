@@ -8,11 +8,7 @@ const state = () => ({
 
 type RootState = ReturnType<typeof state>
 
-const getters: GetterTree<RootState, RootState> = {
-  topArtistsState: state => state.topArtistsState,
-  topTracksState: state => state.topTracksState,
-  activePlaylist: state => state.activePlaylist
-}
+const getters: GetterTree<RootState, RootState> = {}
 
 const mutations: MutationTree<RootState> = {
   setTopArtistsState: (state, topArtistsState: string) => state.topArtistsState = topArtistsState,
@@ -20,8 +16,7 @@ const mutations: MutationTree<RootState> = {
   setActivePlaylist: (state, playlist: PlaylistT) => state.activePlaylist = playlist
 }
 
-const actions: ActionTree<RootState, RootState> = {
-}
+const actions: ActionTree<RootState, RootState> = {}
 
 export {
   state,

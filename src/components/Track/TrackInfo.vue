@@ -1,5 +1,5 @@
 <template>
-  <v-row class="mb-2">
+  <v-row>
     <a
       :href="track.url"
       target="_blank"
@@ -17,7 +17,7 @@
     </a>
     <v-col cols="8" xs="10" sm="10" md="9" xl="10" class="pl-2">
       <v-row no-gutters>
-        <span class="baseProfileText white--text">{{ track.name }}</span>
+        <span class="mediumProfileText white--text">{{ track.name }}</span>
       </v-row>
       <v-row no-gutters>
         <div class="baseProfileText grey--text"> {{ formatTrackInfo(track.author, track.album) }}</div>
