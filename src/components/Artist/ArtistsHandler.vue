@@ -1,7 +1,7 @@
 <template>
   <v-col>
     <HeaderTitle
-      title="Top Artists of All Time"
+      title="Top Artists"
       type="artist"
       :extended="extended"
     />

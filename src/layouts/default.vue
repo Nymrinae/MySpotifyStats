@@ -22,7 +22,8 @@ export default class DefaultLayout extends Vue {
   private windowSize: number = window.innerWidth
 
   get isMobile(): boolean {
-    return this.windowSize < 767
+    // @ts-ignore
+    return this.windowSize < this.$vuetify.breakpoint.thresholds.sm
   }
 
   mounted() {

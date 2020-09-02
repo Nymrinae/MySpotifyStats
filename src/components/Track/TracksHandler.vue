@@ -1,7 +1,7 @@
 <template>
   <v-col>
     <HeaderTitle
-      title="Top Tracks of All Time"
+      title="Top Tracks"
       type="track"
       :extended="extended"
     />
@@ -10,7 +10,7 @@
       :key="t"
       :track="track"
       style="text-align: left"
-      :extended="extended"
+      :extended="true"
     />
   </v-col>
 </template>
