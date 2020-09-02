@@ -1,5 +1,5 @@
 <template>
-  <v-row>
+  <v-row class="pt-1">
     <a
       :href="track.url"
       target="_blank"

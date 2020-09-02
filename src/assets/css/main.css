@@ -3,10 +3,10 @@
   letter-spacing: .5px !important;
 }
 
-.username:hover {
+.username:hover, .sectionTitle:hover {
   color: #1ED760 !important;
   transition: .2s linear;
-  cursor: pointer;
+  cursor: default
 }
 
 .statsText {
@@ -31,11 +31,8 @@
   padding-left: 12px;
 }
 
-.centerVertically {
-  display: flex;
-  align-items: center;
-}
-
-.pointer {
-  cursor: pointer;
+.sectionTitle {
+  color: white;
+  font-size: 24px;
+  text-align: left;
 }

@@ -1,7 +1,7 @@
 <template>
   <v-row class="centerVertically mb-4">
     <v-col cols="8">
-      <h3 class="sectionText"> {{ title }}</h3>
+      <h3 class="sectionTitle"> {{ title }}</h3>
     </v-col>
     <v-col cols="4" class="pr-0">
       <TimeRangeSwitcher v-if="extended && type" :type="type" />
@@ -12,7 +12,6 @@
         size="small"
         :offset="true"
         style="float: right;"
-        
       />
     </v-col>
   </v-row>
@@ -28,11 +27,3 @@ export default class HeaderTitle extends Vue {
   @Prop({ type: Boolean, default: false }) private readonly extended!: boolean;
 }
 </script>
-
-<style scoped>
-.sectionText {
-  color: white;
-  font-size: 24px;
-  text-align: left;
-}
-</style>

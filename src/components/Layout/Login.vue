@@ -60,6 +60,7 @@
     <ButtonSpotify
       content="Log in with Spotify"
       action="login"
+      class="mt-8"
     />
   </div>
 </template>
