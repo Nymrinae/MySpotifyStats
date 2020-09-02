@@ -26,6 +26,11 @@
   padding-left: 12px;
 }
 
+.centerVertically {
+  display: flex;
+  align-items: center;
+}
+
 .pointer {
   cursor: pointer;
 }

@@ -15,7 +15,7 @@
         <v-img :src="track.img" />
       </v-avatar>
     </a>
-    <v-col cols="8" xl="10" class="pl-2">
+    <v-col sm="10" md="9" xl="10" class="pl-2">
       <v-row no-gutters>
         <span class="baseProfileText white--text">{{ track.name }}</span>
       </v-row>

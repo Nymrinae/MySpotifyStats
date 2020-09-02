@@ -10,8 +10,7 @@
       :key="artist.id"
       :artist="artist"
       :displayType="displayType"
-      class="mb-1"
-      style="text-align: left;"
+      style="text-align: left; margin-bottom: 2px;"
     />
   </v-col>
 </template>
