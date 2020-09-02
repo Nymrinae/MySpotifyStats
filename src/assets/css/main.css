@@ -20,3 +20,7 @@
 .statsNumber {
   font-weight: bold;
 }
+
+.pointer {
+  cursor: pointer;
+}

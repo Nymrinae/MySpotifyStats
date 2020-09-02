@@ -10,7 +10,7 @@
         role="img"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
-        class="mainIcon mt-8"
+        class="mainIcon mt-8 pointer"
         @click="goTo('/profile')"
       >
         <path
@@ -32,7 +32,7 @@
     </v-list>
     <template v-slot:append>
       <v-icon
-        class="icon"
+        class="icon pointer"
         style="margin-bottom: 24px;"
         size="32"
       >

@@ -73,8 +73,8 @@ import { getSpotifyAuthURL } from '@/api/auth'
 
 @Component
 export default class Login extends Vue {
-  loginWithSpotify() {
-    window.location.href = getSpotifyAuthURL()
+  loginWithSpotify(): void {
+    window.location.href = getSpotifyAuthURL(this.$config.spotifyClientID)
   }
 }
 </script>

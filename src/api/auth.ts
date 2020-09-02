@@ -14,16 +14,16 @@ const getHashParams = (): any => {
   const hashParams: { [key: string]: string } = {}
   const regex: RegExp = /([^&;=]+)=?([^&;]*)/g
   let elem = undefined
-  const hash: string = window.location.hash.substring(1);
+  const hash: string = window.location.hash.substring(1)
 
   while (elem = regex.exec(hash)) {
-    hashParams[elem[1]] = decodeURIComponent(elem[2]);
+    hashParams[elem[1]] = decodeURIComponent(elem[2])
   }
 
   return hashParams
 }
 
-const getSpotifyAuthURL = (): string => {
+const getSpotifyAuthURL = (spotifyClientID: string): string => {
   const state = generateRandomString(16);
   const scope = 'user-read-private user-read-email user-read-recently-played user-top-read user-follow-read user-follow-modify playlist-read-private playlist-read-collaborative playlist-modify-public';
 
@@ -31,9 +31,9 @@ const getSpotifyAuthURL = (): string => {
 
   return 'https://accounts.spotify.com/authorize?' + querystring.stringify({
     response_type: 'token',
-    client_id: process.env.spotifyClientID,
+    client_id: spotifyClientID,
     scope,
-    redirect_uri: `${REDIRECT_BASE_URL}`,
+    redirect_uri: REDIRECT_BASE_URL,
     state
   })
 }

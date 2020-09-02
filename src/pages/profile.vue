@@ -1,12 +1,12 @@
 <template>
   <v-container style="padding-top: 72px;">
     <UserHandler />
-    <!-- <v-row class="mt-8">
+    <v-row class="mt-8">
       <v-col cols="1" />
       <ArtistsHandler displayType="inline" />
       <TracksHandler />
       <v-col cols="1" />
-    </v-row> -->
+    </v-row>
   </v-container>
 </template>
 

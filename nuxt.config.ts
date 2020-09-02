@@ -31,6 +31,7 @@ const config: NuxtConfig = {
   ** Global CSS
   */
   css: [
+    '@/assets/css/main.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -63,7 +64,7 @@ const config: NuxtConfig = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {},
-  env: {
+  publicRuntimeConfig: {
     spotifyClientID: process.env.SPOTIFY_CLIENT_ID,
   },
   /*
