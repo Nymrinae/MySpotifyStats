@@ -7,7 +7,11 @@
 <script lang="ts">
 import { Vue, Component } from "nuxt-property-decorator";
 
-@Component
+@Component({
+  head: {
+    title: 'MySpotifyStats - Top Tracks'
+  },
+})
 export default class TopTracks extends Vue {}
 </script>
 

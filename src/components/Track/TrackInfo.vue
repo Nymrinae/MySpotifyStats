@@ -15,16 +15,25 @@
         <v-img :src="track.img" />
       </v-avatar>
     </a>
-    <v-col cols="8" xs="10" sm="10" md="9" xl="10" class="pl-2">
+    <v-col
+      cols="8"
+      xs="10"
+      :sm="extended && track.lastTimePlayed ? 8 : 10"
+      md="9"
+      :xl="extended && track.lastTimePlayed ? 8 : 10"
+      class="pl-2"
+    >
       <v-row no-gutters>
         <span class="mediumProfileText white--text">{{ track.name }}</span>
       </v-row>
       <v-row no-gutters>
-        <div class="baseProfileText grey--text"> {{ formatTrackInfo(track.author, track.album) }}</div>
+        <div class="baseProfileText truncateText grey--text" >
+          {{ `${track.author} - ${track.album}` }}
+        </div>
       </v-row>
     </v-col>
-    <v-col cols="2" v-if="track.lastTimePlayed">
-      <span style="baseProfileText white--text" v-html="track.lastTimePlayed" />
+    <v-col cols="1" xl="2" v-if="track.lastTimePlayed">
+      <span class="baseProfileText white--text d-none d-xl-flex" v-html="track.lastTimePlayed" />
     </v-col>
     <v-col cols="1">
       <span class="baseProfileText ml-2 white--text" v-html="track.duration" />
@@ -38,20 +47,6 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 @Component
 export default class TrackInfo extends Vue {
   @Prop() private readonly track!: Track;
-  @Prop({ default : false }) private readonly extended!: Boolean;
-
-  formatTrackInfo(author: string, album: string) {
-    let trackInfoDesc = `${author} - ${album}`
-
-    if (trackInfoDesc.length > 32) {
-      // @ts-ignore
-      const addPoints: number | undefined = this.$vuetify.breakpoint.xs ? 3 : undefined
-      const parseAlbumName: string = album.split(' ').slice(0, addPoints).join(' ')
-  
-      trackInfoDesc = `${author} - ${parseAlbumName}${addPoints ? '...' : ''}`
-    }
-
-    return trackInfoDesc
-  }
+  @Prop({ default : false, type: Boolean }) private readonly extended!: Boolean;
 }
 </script>

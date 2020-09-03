@@ -1,17 +1,28 @@
 <template>
   <v-row class="centerVertically mb-4">
-    <v-col cols="8">
-      <h3 class="sectionTitle"> {{ title }}</h3>
+    <v-col
+      :cols="isTopRoute ? '12' : '8'"
+      xl="8"
+      style="padding-left: 0px !important;">
+      <h3
+        class="sectionTitle"
+        :class="{ 'centerHorizontally': $vuetify.breakpoint.xs && isTopRoute }"
+        v-html="title"
+      />
     </v-col>
-    <v-col cols="4" class="pr-0">
+    <v-col
+      :cols="isTopRoute ? '12': '4'"
+      xl="4"
+      :class="`${isTopRoute ? 'margin-left: 0px !important' : ''}`"
+    >
       <TimeRangeSwitcher v-if="extended && type" :type="type" />
       <Button
         v-if="!extended && type"
         content="See more"
         :href="type === 'artist' ? '/topartists' : '/toptracks'"
         size="small"
-        :offset="true"
         style="float: right;"
+        offset
       />
     </v-col>
   </v-row>
@@ -25,5 +36,9 @@ export default class HeaderTitle extends Vue {
   @Prop({ required: true }) private readonly title!: string;
   @Prop({ default : '' }) private readonly type!: string;
   @Prop({ type: Boolean, default: false }) private readonly extended!: boolean;
+
+  get isTopRoute(): boolean {
+    return this.$route.path.startsWith('/top')
+  }
 }
 </script>

@@ -31,8 +31,14 @@
   padding-left: 12px;
 }
 
+.truncateText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .sectionTitle {
   color: white;
   font-size: 24px;
-  text-align: left;
+  float: left;
 }

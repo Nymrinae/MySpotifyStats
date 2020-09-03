@@ -4,7 +4,7 @@
       v-for="({ name, desc }, t) in timeRanges"
       :key="t"
       v-html="desc"
-      class="timeRangeText mx-4"
+      class="timeRangeText mx-2"
       :class="{'timeRangeTextFocused': isFocused(name) }"
       @click="setTimeRange(name)"
     />

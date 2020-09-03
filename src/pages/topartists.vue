@@ -10,10 +10,12 @@
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
 
-@Component
-export default class TopArtists extends Vue {
-
-}
+@Component({
+  head: {
+    title: 'MySpotifyStats - Top Artists'
+  },
+})
+export default class TopArtists extends Vue {}
 </script>
 
 <style scoped>

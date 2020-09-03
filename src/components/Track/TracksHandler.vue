@@ -10,7 +10,7 @@
       :key="t"
       :track="track"
       style="text-align: left"
-      :extended="true"
+      :extended="extended"
     />
   </v-col>
 </template>
@@ -43,9 +43,15 @@ export default class TopTracksHandler extends Vue {
   }
 
   async mounted() {
-    this.tracksShort = await getUserTopTracks('short', 50)
-    this.tracksMedium = await getUserTopTracks('medium', 50)
-    this.tracksLong = await getUserTopTracks('long', this.extended ? 50 : 10)
+    let [tracksShort, tracksMedium, tracksLong] = await Promise.all([
+      getUserTopTracks('short', 50),
+      getUserTopTracks('medium', 50),
+      getUserTopTracks('long', this.extended ? 50 : 10)
+    ])
+
+    this.tracksShort = tracksShort
+    this.tracksMedium = tracksMedium
+    this.tracksLong = tracksLong
   }
 }
 </script>

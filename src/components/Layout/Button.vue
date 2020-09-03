@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="`btn btn-${size} ${offset ? 'offset' : ''}`"
+    :class="`btn btn-${size}`"
     @click="goToPath"
   >
     {{ content }}
@@ -14,7 +14,6 @@ import { Component, Prop, Vue } from 'vue-property-decorator'
 export default class Button extends Vue {
   @Prop({ required: true }) private readonly content!: string
   @Prop({ default: 'medium' }) private readonly size!: string
-  @Prop({ default: false }) private readonly offset!: boolean
   @Prop() private readonly href!: string
 
   private goToPath(): void {
@@ -42,10 +41,6 @@ export default class Button extends Vue {
 .btn-small {
   width: 120px;
   padding: 12px 12px;
-}
-
-.offset {
-  margin-left: 36px;
 }
 
 .btn:hover {

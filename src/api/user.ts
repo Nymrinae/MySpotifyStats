@@ -18,17 +18,19 @@ const getUserPlaylistsNb = async (userId: string): Promise<number> => {
 const getRecentlyPlayed = async (): Promise<any> => {
   const lastPlayed = await getDataFrom('/me/player/recently-played')
 
+  console.log(lastPlayed)
+
   return lastPlayed.items.map((lastPlayedTrack: any): Track => {
-    const track = lastPlayedTrack.track
+    const { id, artists, name, album, duration_ms, external_urls } = lastPlayedTrack.track
 
     return {
-      id: track.id,
-      author: track.artists[0].name,
-      name: track.name,
-      album: track.album.name,
-      duration: convertTime(track.duration_ms),
-      img: track.album.images[0].url,
-      url: track.external_urls?.spotify,
+      id,
+      author: artists.map((a: any /*Spotify Artist */) => a.name).join(', '),
+      name,
+      album: album.name,
+      duration: convertTime(duration_ms),
+      img: album.images[0].url,
+      url: external_urls?.spotify,
       lastTimePlayed: formatDate(lastPlayedTrack.played_at)
     }
   }) as Track[]

@@ -1,5 +1,5 @@
 <template>
-  <v-col>
+  <v-col :class="`${isTopArtistRoute ? 'mx-8 my-8' : ''}`">
     <HeaderTitle
       title="Top Artists"
       type="artist"
@@ -29,7 +29,19 @@ export default class TopArtistsHandler extends Vue {
   private artistsMedium: Artist[] = []
   private artistsLong: Artist[] = []
 
-  get artists() {
+  async mounted() {
+    let [artistsShort, artistsMedium, artistsLong] = await Promise.all([
+      getUserTopArtists('short', 50),
+      getUserTopArtists('medium', 50),
+      getUserTopArtists('long', this.extended ? 50 : 10)
+    ])
+
+    this.artistsShort = artistsShort
+    this.artistsMedium = artistsMedium
+    this.artistsLong = artistsLong
+  }
+
+  get artists(): Artist[] {
     if (!this.extended)
       return this.artistsLong
 
@@ -43,10 +55,8 @@ export default class TopArtistsHandler extends Vue {
     }
   }
 
-  async mounted() {
-    this.artistsShort = await getUserTopArtists('short', 50)
-    this.artistsMedium = await getUserTopArtists('medium', 50)
-    this.artistsLong = await getUserTopArtists('long', this.extended ? 50 : 10)
+  get isTopArtistRoute(): boolean {
+    return this.$route.path === '/topartists'
   }
 }
 </script>

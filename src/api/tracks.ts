@@ -2,14 +2,16 @@ import getDataFrom from './request'
 import { convertTime } from '../helpers/functions'
 
 const formatTrack = (track: any /*Spotify Track */): Track => {
+  const { id, artists, name, album, duration_ms, external_urls } = track
+
   return {
-    id: track.id,
-    author: track.artists.map((a: any /*Spotify Artist */) => a.name).join(' ft. '),
-    name: track.name,
-    album: track.album.name,
-    duration: convertTime(track.duration_ms),
-    img: track.album.images[0].url,
-    url: track.external_urls.spotify || ''
+    id,
+    author: artists.map((a: any /*Spotify Artist */) => a.name).join(', '),
+    name,
+    album: album.name,
+    duration: convertTime(duration_ms),
+    img: album.images[0].url,
+    url: external_urls.spotify || ''
   }
 }
 
