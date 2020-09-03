@@ -1,5 +1,5 @@
 <template>
-  <v-container style="padding-top: 72px;">
+  <v-container style="padding-top: 48px;">
     <UserHandler />
     <v-row class="mt-sm-8 mb-4">
       <v-col cols="0" lg="1" />

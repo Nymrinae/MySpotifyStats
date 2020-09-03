@@ -1,5 +1,9 @@
 <template>
-  <v-container fill-height style="padding: 72px;">
+  <v-container
+    fill-height
+    style="padding: 48px;"
+    :class="{ 'mb-8': $vuetify.breakpoint.xs }"
+  >
     <ArtistsHandler
       displayType="rounded"
       extended
@@ -17,6 +21,3 @@ import { Vue, Component } from 'nuxt-property-decorator'
 })
 export default class TopArtists extends Vue {}
 </script>
-
-<style scoped>
-</style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <span>
     <span
       v-for="({ name, desc }, t) in timeRanges"
       :key="t"
@@ -8,7 +8,7 @@
       :class="{'timeRangeTextFocused': isFocused(name) }"
       @click="setTimeRange(name)"
     />
-  </div>
+  </span>
 </template>
 
 <script lang="ts">

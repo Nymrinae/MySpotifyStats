@@ -1,6 +1,6 @@
 <template>
   <v-col>
-    <HeaderTitle
+    <Header
       title="Top Tracks"
       type="track"
       :extended="extended"

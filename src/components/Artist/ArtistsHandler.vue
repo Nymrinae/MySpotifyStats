@@ -1,6 +1,6 @@
 <template>
-  <v-col :class="`${isTopArtistRoute ? 'mx-8 my-8' : ''}`">
-    <HeaderTitle
+  <v-col>
+    <Header
       title="Top Artists"
       type="artist"
       :extended="extended"

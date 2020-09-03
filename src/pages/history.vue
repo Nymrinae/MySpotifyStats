@@ -1,6 +1,10 @@
 <template>
-  <v-container fill-height style="padding: 72px;">
-    <HeaderTitle title="Recently Played" />
+  <v-container
+    fill-height
+    style="padding: 48px;"
+    :class="{ 'mb-8': $vuetify.breakpoint.xs }"
+  >
+    <Header title="Recently Played" />
     <TrackInfo
       v-for="(track, t) in tracks"
       :key="t"

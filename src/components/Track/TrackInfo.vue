@@ -16,7 +16,7 @@
       </v-avatar>
     </a>
     <v-col
-      cols="8"
+      cols="7"
       xs="10"
       :sm="extended && track.lastTimePlayed ? 8 : 10"
       md="9"
@@ -24,7 +24,7 @@
       class="pl-2"
     >
       <v-row no-gutters>
-        <span class="mediumProfileText white--text">{{ track.name }}</span>
+        <span class="mediumProfileText truncateText white--text">{{ track.name }}</span>
       </v-row>
       <v-row no-gutters>
         <div class="baseProfileText truncateText grey--text" >

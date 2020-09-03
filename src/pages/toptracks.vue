@@ -1,5 +1,8 @@
 <template>
-  <v-container style="padding: 72px;">
+  <v-container
+    style="padding: 48px;"
+    :class="{ 'mb-8': $vuetify.breakpoint.xs }"
+  >
     <TracksHandler extended />
   </v-container>
 </template>
@@ -14,6 +17,3 @@ import { Vue, Component } from "nuxt-property-decorator";
 })
 export default class TopTracks extends Vue {}
 </script>
-
-<style scoped>
-</style>
