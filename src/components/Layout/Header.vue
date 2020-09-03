@@ -2,7 +2,8 @@
   <v-row class="centerVertically mb-4">
     <v-col
       :cols="isTopRoute ? '12' : '8'"
-      xl="8"
+      sm="6"
+      lg="8"
     >
       <h3
         class="sectionTitle"
@@ -12,9 +13,10 @@
     </v-col>
     <v-col
       :cols="isTopRoute ? '12': '4'"
-      xl="4"
+      sm="4"
+      lg="4"
       :class="`${isTopRoute ? 'px-0 py-4 mx-n2' : ''}`"
-      style="min-width: 300px;"
+      :style="`${isTopRoute ? 'min-width: 300px;' : ''}`"
     >
       <TimeRangeSwitcher v-if="extended && type" :type="type" />
       <Button
