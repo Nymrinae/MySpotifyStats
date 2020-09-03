@@ -18,8 +18,6 @@ const getUserPlaylistsNb = async (userId: string): Promise<number> => {
 const getRecentlyPlayed = async (): Promise<any> => {
   const lastPlayed = await getDataFrom('/me/player/recently-played')
 
-  console.log(lastPlayed)
-
   return lastPlayed.items.map((lastPlayedTrack: any): Track => {
     const { id, artists, name, album, duration_ms, external_urls } = lastPlayedTrack.track
 

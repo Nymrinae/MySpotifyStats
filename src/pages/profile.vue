@@ -6,7 +6,6 @@
       <v-col cols="12" md="6" lg="5">
         <ArtistsHandler displayType="inline" />
       </v-col>
-      <!-- <v-spacer /> -->
       <v-col cols="12" md="6" lg="5">
         <TracksHandler />
       </v-col>

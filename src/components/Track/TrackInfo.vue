@@ -4,6 +4,7 @@
       :href="track.url"
       target="_blank"
       rel="noreferrer noopener"
+      class="mt-3"
     >
       <v-img
         v-if="extended"

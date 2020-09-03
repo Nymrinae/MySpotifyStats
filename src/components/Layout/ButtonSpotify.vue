@@ -29,7 +29,6 @@ export default class ButtonSpotify extends Vue {
   @Prop({ required: true }) action!: ButtonActionType
 
   loginWithSpotify(): void {
-    console.log('a')
     window.location.href = getSpotifyAuthURL(this.$config.spotifyClientID)
   }
 
