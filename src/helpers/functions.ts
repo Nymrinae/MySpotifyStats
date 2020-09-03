@@ -21,8 +21,11 @@ export const formatDate = (date: Date): string => {
 }
 
 export const handleCurrentRoute = (newRoute: RouteConfig, oldRoute: RouteConfig, isMobile: boolean): void => {
-  const newRoutePath = navbarItems.find(r => r.name === newRoute.name)!.path
-  const oldRoutePath = navbarItems.find(r => r.name === oldRoute.name)!.path
+  const findPath = (route: RouteConfig): string => {
+    return navbarItems.find(r => r.name === route.name?.split('-')[0])!.path
+  }
+  const newRoutePath = findPath(newRoute)
+  const oldRoutePath = findPath(oldRoute)
 
   if (newRoutePath != oldRoutePath) {
     document.getElementById(newRoutePath)!.classList.add(`navbar${isMobile ? 'Mobile' : ''}ItemActive`)
