@@ -1,28 +1,28 @@
 <template>
-  <v-row class="pt-1">
+  <v-row class="pt-1 mb-2">
     <a
       :href="track.url"
       target="_blank"
       rel="noreferrer noopener"
-      class="mt-3"
     >
       <v-img
         v-if="extended"
         :src="track.img"
-        class="mt-2"
+        class="mb-2"
         height="54"
-        width="54" />
+        width="54"
+        />
       <v-avatar v-else size="48">
         <v-img :src="track.img" />
       </v-avatar>
     </a>
     <v-col
-      cols="7"
+      :cols="currentRouteName === 'history' ? 7 : 8"
       xs="10"
       :sm="extended && track.lastTimePlayed ? 8 : 10"
       md="9"
       :xl="extended && track.lastTimePlayed ? 8 : 10"
-      class="pl-2"
+      class="pl-2 mt-n3"
     >
       <v-row no-gutters>
         <span class="mediumProfileText truncateText white--text">{{ track.name }}</span>
@@ -49,5 +49,9 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 export default class TrackInfo extends Vue {
   @Prop() private readonly track!: Track;
   @Prop({ default : false, type: Boolean }) private readonly extended!: Boolean;
+
+  get currentRouteName(): string {
+    return this.$route.name!
+  }
 }
 </script>

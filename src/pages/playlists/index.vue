@@ -1,5 +1,5 @@
 <template>
-  <v-container fill-height style="padding: 72px;">
+  <v-container fill-height style="padding: 48px;">
     <Header title="Playlists" />
     <PlaylistCard
       v-for="(playlist, p) in playlists"

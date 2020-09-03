@@ -1,17 +1,18 @@
 <template>
   <v-row class="centerVertically mb-4">
     <v-col
-      :cols="isTopRoute ? '12' : '8'"
+      :cols="excludeProfileRoute ? '12' : '8'"
       sm="6"
       lg="8"
     >
       <h3
-        class="sectionTitle"
-        :class="{ 'centerHorizontally': $vuetify.breakpoint.xs && isTopRoute }"
+        class="sectionTitle truncateText"
+        :class="{ 'centerHorizontally': $vuetify.breakpoint.xs && excludeProfileRoute }"
         v-html="title"
       />
     </v-col>
     <v-col
+      v-if="currentRouteName !== 'history'"
       :cols="isTopRoute ? '12': '4'"
       sm="4"
       lg="4"
@@ -42,6 +43,14 @@ export default class Header extends Vue {
 
   get isTopRoute(): boolean {
     return this.$route.path.startsWith('/top')
+  }
+
+  get excludeProfileRoute(): boolean {
+    return this.$route.name !== 'profile'
+  }
+
+  get currentRouteName(): string {
+    return this.$route.name!
   }
 }
 </script>
