@@ -21,14 +21,17 @@ export const formatDate = (date: Date): string => {
 }
 
 export const handleCurrentRoute = (newRoute: RouteConfig, oldRoute: RouteConfig, isMobile: boolean): void => {
-  const findPath = (route: RouteConfig): string => {
-    return navbarItems.find(r => r.name === route.name?.split('-')[0])!.path
+  const findRouteName = (route: RouteConfig): string => {
+    return navbarItems.find(r => r.name === route.name?.split('-')[0])!.name
   }
-  const newRoutePath = findPath(newRoute)
-  const oldRoutePath = findPath(oldRoute)
+  const newRouteName = findRouteName(newRoute)
+  const oldRouteName = findRouteName(oldRoute)
 
-  if (newRoutePath != oldRoutePath) {
-    document.getElementById(newRoutePath)!.classList.add(`navbar${isMobile ? 'Mobile' : ''}ItemActive`)
-    document.getElementById(oldRoutePath)!.classList.remove(`navbar${isMobile ? 'Mobile' : ''}ItemActive`)
+  console.log(newRouteName)
+  console.log(oldRouteName)
+
+  if (newRouteName != oldRouteName) {
+    document.getElementById(newRouteName)!.classList.add(`navbar${isMobile ? 'Mobile' : ''}ItemActive`)
+    document.getElementById(oldRouteName)!.classList.remove(`navbar${isMobile ? 'Mobile' : ''}ItemActive`)
   }
 }

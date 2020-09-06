@@ -8,9 +8,9 @@
     fixed
   >
     <div
-      v-for="{ icon, path, title } in navbarItems"
+      v-for="{ name, icon, path, title } in navbarItems"
       :key="title"
-      :id="path"
+      :id="name"
       class="mobileListItem px-4 pt-1"
       style="width: 100%"
       @click="goTo(path)"
@@ -42,7 +42,7 @@ export default class BottomNavbar extends Vue {
   private readonly navbarItems: NavbarItem[] = navbarItems
 
   mounted() {
-    document.getElementById(this.$route.path)!.classList.add('navbarMobileItemActive')
+    document.getElementById(`${this.$route.name!.split('-')[0]}`)!.classList.add('navbarMobileItemActive')
   }
 
   private goTo(path: string): void {

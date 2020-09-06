@@ -20,9 +20,9 @@
     </template>
     <v-list dense style="margin-top: 200%">
       <div
-        v-for="{ icon, path, title } in navbarItems"
+        v-for="{ name, icon, path, title } in navbarItems"
         :key="title"
-        :id="path"
+        :id="name"
         class="listItem py-4"
         @click="goTo(path)"
       >
@@ -57,7 +57,7 @@ export default class Sidebar extends Vue {
   private readonly navbarItems: NavbarItem[] = navbarItems
 
   mounted() {
-    document.getElementById(this.$route.path)!.classList.add('navbarItemActive')
+    document.getElementById(`${this.$route.name!.split('-')[0]}`)!.classList.add('navbarItemActive')
   }
 
   private goTo(path: string): void {
