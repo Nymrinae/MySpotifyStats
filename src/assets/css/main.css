@@ -36,3 +36,13 @@
   font-size: 24px;
   float: left;
 }
+
+.scrollingPlaylistTracks {
+  overflow: auto;
+  max-height: 750px;
+  scrollbar-width: none;
+}
+
+.scrollingPlaylistTracks::-webkit-scrollbar {
+  display: none;
+}

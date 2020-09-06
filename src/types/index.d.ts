@@ -46,6 +46,11 @@ type NavbarItem = {
   path: string
 }
 
+type ScrollState = {
+  icon: '↑' | '↓',
+  state: 'Up' | 'Down'
+}
+
 type TopType = 'artist' | 'track'
 type TimeRange = 'short' | 'medium' | 'long'
 type DisplayType = 'inline' | 'rounded'
