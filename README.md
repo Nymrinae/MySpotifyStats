@@ -1,20 +1,26 @@
 # MySpotifyStats
+<p align="center">
+  <img src="" style="margin: 0 auto;">
+</p>
 
-## Build Setup
+## Stack
 
-```bash
-# install dependencies
-$ npm install
+- Nuxt.js
+- Vue.js
+- VueX (state management)
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+## Features
+- Check Top Artists (4 weeks, 6 months, all time)
+- Check Top Tracks (4 weeks, 6 months, all time)
+- Check playlists and songs on playlists
+- Check the history of your songs
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+## Author
+- [Nymrinae](https://github.com/Nymrinae)
 
-# generate static project
-$ npm run generate
-```
+## Acknowledgments
+- [Spotify](https://developer.spotify.com/documentation/web-api/) for their API.
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## Licence
+This project is under the MIT License. See the [LICENSE.md](./LICENSE.md) file for more details.
